@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light" style="color-scheme: light;"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enzo · Sensibilidades</title>
+<style>
+:root{--bg:#07070d;--card:#14141f;--tx:#f4f4f8;--mu:#a0a0b8;--ac:#ff5a00;--ac2:#ffb100;--pu:#7b2cff;--ok:#2ecc71;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3f1fa;--card:#fff;--tx:#15151c;--mu:#66667a}}
+:root[data-theme="dark"]{--bg:#07070d;--card:#14141f;--tx:#f4f4f8;--mu:#a0a0b8}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% -10%,#ff5a0033,transparent 55%),radial-gradient(circle at 100% 30%,#7b2cff30,transparent 45%),var(--bg);color:var(--tx);font-family:system-ui,Arial,sans-serif;padding:16px;min-height:100%}
+.w{max-width:520px;margin:auto}
+.hero{text-align:center;padding:22px 0 8px}
+.hero .f{font-size:46px;filter:drop-shadow(0 0 14px #ff5a00)}
+h1{margin:0;font-size:40px;font-weight:900;letter-spacing:3px;background:linear-gradient(90deg,var(--ac2),var(--ac),var(--pu));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);margin:4px 0 0;letter-spacing:2px;font-size:13px;text-transform:uppercase}
+.timer{margin:16px auto;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--card);border:1px solid #ff5a0055;border-radius:99px;padding:8px 16px;width:max-content;box-shadow:0 0 22px #ff5a0030}
+.live{width:9px;height:9px;background:var(--ok);border-radius:50%;animation:p 1.2s infinite;box-shadow:0 0 8px var(--ok)}
+@keyframes p{50%{opacity:.25}}
+.card{background:var(--card);border:1px solid #ffffff14;border-radius:18px;padding:16px;margin:14px 0;box-shadow:0 8px 30px #0006}
+.card h2{margin:0 0 10px;font-size:16px;letter-spacing:1px}
+.it{margin:11px 0}.it .t{display:flex;justify-content:space-between;font-size:14px}
+.v{font-weight:800;color:var(--ac2);font-variant-numeric:tabular-nums}
+.bar{height:7px;border-radius:9px;background:#8882;margin-top:5px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:9px;transition:width .6s}
+.lock .v,.lock .bar{filter:blur(6px)}
+.tag{font-size:12px;color:var(--mu)}
+.price{font-size:38px;font-weight:900;color:var(--ac2);text-align:center;margin:4px 0}
+.yape{background:linear-gradient(135deg,#742284,#a93bc4);border-radius:14px;padding:14px;text-align:center;color:#fff;margin:10px 0}
+.yape b{font-size:22px;letter-spacing:2px;display:block}
+button,input,select{font:inherit;padding:12px;border-radius:12px;border:1px solid #8885;background:var(--bg);color:var(--tx);width:100%;margin-top:8px}
+button{background:linear-gradient(90deg,var(--ac),var(--ac2));color:#fff;border:0;font-weight:800;letter-spacing:.5px}
+button.g{background:linear-gradient(90deg,#1fa85a,#2ecc71)}
+a.mail{color:var(--ac2);text-decoration:none;font-weight:700}
+.ent{border-top:1px solid #8883;padding-top:10px;margin-top:12px}.ent:first-child{border:0;margin-top:0;padding:0}.nm{font-size:18px;font-weight:900;display:flex;justify-content:space-between;align-items:center}.ago{font-size:12px;color:var(--ok);font-weight:600}.del{width:auto;padding:6px 10px;margin:0;background:#c0392b}.sb{display:inline-block;margin:6px;padding:12px 22px;border-radius:99px;color:#fff!important;font-weight:800;text-decoration:none;font-size:15px}.tt{background:linear-gradient(90deg,#00f2ea,#111 50%,#ff0050)}.ig{background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7)}.foot{text-align:center;color:var(--mu);font-size:12px;margin:18px 0 30px}
+#ed{border:1px dashed var(--ac)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}
+label{font-size:12px;color:var(--mu);display:block;margin-top:8px}
+</style></head><body><div class="w">
+
+<div class="hero"><div class="f">🔥</div><h1 id="h_title">ENZO 💥</h1><p class="sub">Sensibilidades · Free Fire</p></div>
+<div class="timer"><span class="live"></span><span>Cambian en <b id="cd">60</b>s</span></div>
+
+<div class="card"><h2>⚡ SENSIBILIDAD DEL MINUTO</h2><p class="tag">Generada automáticamente, cambia cada minuto. Es una sugerencia para probar, no de un jugador en específico.</p><div id="auto"></div></div>
+
+<div class="card"><h2>⭐ SENSIBILIDADES DE ENZO</h2><div id="list" class=""></div></div>
+
+<div class="card" id="unlockBox" style="display: none;">
+  <h2>🔓 DESBLOQUEA TODO</h2>
+  <div class="price">S/ <span id="price">5.00</span></div>
+  <p class="tag" style="text-align:center">Acceso por 30 días · pago solo por Yape</p>
+  <div class="yape">Yape a nombre de Enzo<b id="yape">926 582 512</b></div>
+  <input id="nom" placeholder="Tu nombre">
+  <input id="op" placeholder="N.º de operación del pago">
+  <button onclick="wsp()">📲 Enviar comprobante por WhatsApp</button>
+  <input id="code" placeholder="Código de acceso que te doy">
+  <button class="g" onclick="unlock()">Desbloquear</button>
+  <p class="tag" id="msg"></p>
+  <p class="tag">¿Dudas? Escríbeme a <a class="mail" id="mail" href="mailto:newenzox7@gmail.com">newenzox7@gmail.com</a></p>
+</div>
+
+<div class="card" id="ed" style="display: none;">
+  <h2>✏️ MODO EDITOR (solo tú)</h2>
+  <div class="g2">
+  <div><label>Precio (S/)</label><input id="e_precio"></div>
+  <div><label>Código de acceso</label><input id="e_codigo"></div>
+  <div><label>Número Yape</label><input id="e_yape"></div>
+  <div><label>WhatsApp (con 51)</label><input id="e_wsp"></div></div>
+  <label>Gmail</label><input id="e_mail">
+  <div class="g2"><div><label>TikTok (usuario)</label><input id="e_tt" placeholder="enzo"></div><div><label>Instagram (usuario)</label><input id="e_ig" placeholder="enzo"></div></div>
+  <label>Nombre de la página</label><input id="e_title">
+  <button onclick="saveAll()">💾 Guardar ajustes</button>
+  <label style="margin-top:16px">➕ NUEVA SENSIBILIDAD REAL</label>
+  <input id="n_n" placeholder="Jugador (ej. Enzo)">
+  <div class="g2"><input id="n_gen" placeholder="General"><input id="n_red" placeholder="Punto rojo"><input id="n_x2" placeholder="Mira 2x"><input id="n_x4" placeholder="Mira 4x"><input id="n_awm" placeholder="AWM"><input id="n_cam" placeholder="Cámara libre"><input id="n_dpi" placeholder="DPI (opcional)"><input id="n_btn" placeholder="Botón disparo (%)"></div>
+  <input id="n_tipo" placeholder="Tipo de botón (ej. 3 dedos)">
+  <button class="g" onclick="addEnt()">Agregar y publicar</button>
+  <div id="elist"></div>
+  <p class="tag" id="emsg">Pon el nombre del jugador.</p>
+</div>
+
+<div class="card" id="soc" style="text-align:center"><h2>📱 SÍGUEME</h2><a id="a_tt" class="sb tt" href="https://www.tiktok.com/@enzopr1nce" target="_top" rel="noopener">🎵 TikTok @enzopr1nce</a> <a id="a_ig" class="sb ig" href="https://www.instagram.com/enzopr1nce" target="_top" rel="noopener">📸 Instagram @enzopr1nce</a></div>
+<p class="foot">© Enzo · Sensibilidades</p>
+</div>
+
+<script id="state" type="application/json">{"precio":"5.00","yape":"926 582 512","wsp":"51926582512","mail":"newenzox7@gmail.com","codigo":"ENZO2026","title":"ENZO 💥","tt":"enzopr1nce","ig":"enzopr1nce","entries":[]}</script>
+<script>
+const S=JSON.parse(document.getElementById('state').textContent);
+const $=id=>document.getElementById(id);
+$('h_title').textContent=S.title;$('price').textContent=S.precio;$('yape').textContent=S.yape;
+$('mail').textContent=S.mail;$('mail').href='mailto:'+S.mail;
+let owner=false,unlocked=false;try{unlocked=localStorage.getItem('enzo_ok')==='1'}catch(e){}
+const F=[["General","gen"],["Punto rojo","red"],["Mira 2x","x2"],["Mira 4x","x4"],["AWM","awm"],["Cámara libre","cam"],["Botón (%)","btn"],["DPI","dpi"],["Tipo de botón","tipo"]];
+function ago(t){if(!t)return'—';const m=Math.floor((Date.now()-t)/60000);if(m<1)return'hace instantes';if(m<60)return'hace '+m+' min';const h=Math.floor(m/60);if(h<24)return'hace '+h+' h';return'hace '+Math.floor(h/24)+' d'}
+const R=[["General",90,100],["Punto rojo",88,100],["Mira 2x",82,100],["Mira 4x",78,100],["AWM",55,90],["Cámara libre",60,100],["DPI",400,800,1],["Botón de disparo (%)",35,65]];
+function rng(q){return()=>{q=(q*1664525+1013904223)%4294967296;return q/4294967296}}
+function social(){const t=(S.tt||'').replace('@',''),i=(S.ig||'').replace('@','');
+  const a=$('a_tt'),b=$('a_ig');a.style.display=t?'inline-block':'none';b.style.display=i?'inline-block':'none';
+  if(t){a.href='https://www.tiktok.com/@'+encodeURIComponent(t);a.textContent='🎵 TikTok @'+t}
+  if(i){b.href='https://www.instagram.com/'+encodeURIComponent(i);b.textContent='📸 Instagram @'+i}
+  $('soc').style.display=(t||i)?'block':'none'}
+function renderAuto(){const r=rng(Math.floor(Date.now()/60000)),ok=unlocked||owner;
+  $('auto').className=ok?'':'lock';
+  $('auto').innerHTML=R.map(x=>{let v=x[1]+Math.round(r()*(x[2]-x[1]));if(x[3])v=Math.round(v/50)*50;const p=Math.min(100,Math.round((v-x[1]*.5)/(x[2]-x[1]*.5)*100));return`<div class="it"><div class="t"><span>${x[0]}</span><span class="v">${v}</span></div><div class="bar"><i style="width:${p}%"></i></div></div>`}).join('')}
+function tick(){$('cd').textContent=60-Math.floor(Date.now()/1000)%60;if(60-Math.floor(Date.now()/1000)%60>=59)renderAuto()}
+function render(){renderAuto();social();
+  const ok=unlocked||owner,E=S.entries||[];
+  $('list').className=ok?'':'lock';
+  $('list').innerHTML=E.length?E.map(e=>`<div class="ent"><div class="nm"><span>${esc(e.n)}</span><span class="ago">${ago(e.t)}</span></div>`+F.filter(f=>e[f[1]]).map(f=>{const n=parseFloat(e[f[1]]),bar=(f[1]!=='dpi'&&n<=100)?`<div class="bar"><i style="width:${n}%"></i></div>`:'';return`<div class="it"><div class="t"><span>${f[0]}</span><span class="v">${esc(e[f[1]])}</span></div>${bar}</div>`}).join('')+'</div>').join(''):'<p class="tag">Pronto subiré nuevas sensibilidades.</p>';
+  $('unlockBox').style.display=ok?'none':'block';
+  if(owner)$('elist').innerHTML=E.map((e,i)=>`<div class="nm" style="margin-top:8px;font-size:14px"><span>${esc(e.n)}</span><button class="del" onclick="delEnt(${i})">Borrar</button></div>`).join('');
+}
+function esc(x){return String(x).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+render();tick();setInterval(tick,1000);setInterval(render,30000);
+function wsp(){const t=`Hola Enzo, pagué S/ ${S.precio} por Yape. Nombre: ${$('nom').value}. Operación: ${$('op').value}`;open(`https://wa.me/${S.wsp}?text=${encodeURIComponent(t)}`,'_blank')}
+function unlock(){if($('code').value.trim().toUpperCase()===S.codigo.toUpperCase()){unlocked=true;try{localStorage.setItem('enzo_ok','1')}catch(e){}render()}else $('msg').textContent='Código incorrecto.'}
+const K={precio:'e_precio',codigo:'e_codigo',yape:'e_yape',wsp:'e_wsp',mail:'e_mail',title:'e_title',tt:'e_tt',ig:'e_ig'},N=['n','gen','red','x2','x4','awm','cam','dpi','btn','tipo'];
+let art=null;
+(async()=>{try{
+  const u=await claude.use('user');owner=!!(u&&u.isOwner());
+  if(owner){art=await claude.use('artifact');$('ed').style.display='block';for(const k in K)$(K[k]).value=S[k];render()}
+}catch(e){}})();
+function addEnt(){if(!$('n_n').value.trim()){$('emsg').textContent='Pon el nombre del jugador.';return}
+  const e={t:Date.now()};N.forEach(k=>e[k]=$('n_'+k).value.trim());S.entries.unshift(e);saveAll()}
+function delEnt(i){if(confirm('¿Borrar?')){S.entries.splice(i,1);saveAll()}}
+async function saveAll(){
+  if(!art){$('emsg').textContent='No se puede publicar desde aquí.';return}
+  for(const k in K)S[k]=$(K[k]).value.trim();
+  const c=document.documentElement.cloneNode(true);
+  c.querySelector('#state').textContent=JSON.stringify(S);
+  ['list','elist','auto'].forEach(i=>c.querySelector('#'+i).innerHTML='');
+  c.querySelector('#ed').style.display='none';
+  $('emsg').textContent='Publicando…';
+  try{await art.publish('<!DOCTYPE html>\n'+c.outerHTML)}catch(e){$('emsg').textContent='Error: '+(e.code||e.message)}
+}
+</script>
+</body></html>
